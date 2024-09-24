@@ -15,68 +15,41 @@
             <h1 class="mb-4 fw-bold font-cool">CinemaSearch</h1>
             <p class="fs-5 font-poppins mb-0">Discover your next favorite movie</p>
         </div>
-        <div class="input-group mx-auto" style="max-width: 600px;">
-            <input type="text" class="form-control" placeholder="Search Movies">
-            <button class="btn btn-success" type="button">Search</button>
+        <form id="searchForm">
+            <div class="input-group mx-auto" style="max-width: 600px;">
+                <input type="text" class="form-control" placeholder="Search Movies" id="search-input" required>
+                <button class="btn btn-success" type="submit">Search</button>
+            </div>
+        </form>
+
+        <p class="text-center mt-5 fs-4 fw-medium text-danger d-none" id="error-msg">Movie Not Found. Please try again!</p>
+
+        <div class="my-4 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center g-5 g-md-5"
+            id="movieContainer">
+
         </div>
 
-        <div class="my-4 row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center g-4 g-md-5">
-            <div class="card border-0 font-poppins col bg-transparent">
-                <div class="rounded-top-3" style="height: 350px;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNzgzYjZjYzMtNjcyYy00NWI3LTg1NDItOTMzMzdhMjhjNWExXkEyXkFqcGdeQXVyNjA3OTI5MjA@._V1_SX300.jpg"
-                    class="rounded-top-3 w-100 h-100 object-fit-cover rai" alt="...">
-                </div>
-                <div class="card-body d-flex flex-column rounded-bottom-3 bg-dark-subtle">
-                    <p class="fw-medium mb-2">SpiderMan - No way home</p>
-                    <p class="card-text" style="font-size: 14px;">2022 | Action, Adventure</p>
-                    <a href="#" class="btn btn-dark rounded-3 w-100 btn-sm mt-auto">More Info</a>
-                </div>
-            </div>
-            <div class="card border-0 font-poppins col bg-transparent">
-                <div class="rounded-top-3" style="height: 350px;">
-                    <img src="https://cdn.pixabay.com/photo/2020/09/11/00/06/spiderman-5561671_1280.jpg"
-                    class="rounded-top-3 w-100 h-100 object-fit-cover" alt="...">
-                </div>
-                <div class="card-body d-flex flex-column rounded-bottom-3 bg-dark-subtle">
-                    <p class="fw-medium mb-2">SpiderMan - No way home</p>
-                    <p class="card-text" style="font-size: 14px;">2022 | Action, Adventure</p>
-                    <a href="#" class="btn btn-dark rounded-3 w-100 btn-sm mt-auto">More Info</a>
+        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content bg-dark">
+                    <div class="modal-body d-flex flex-column flex-lg-row gap-4 gap-lg-3">
+                        <img id="moviePoster"
+                            src=""
+                            alt="" style="width: max-content; height: max-content;">
+                        <div>
+                            <p><b>Title:</b> <span id="movieTitle"></span></p>
+                            <p><b>Year:</b> <span id="movieYear"></span></p>
+                            <p><b>Genre:</b> <span id="movieGenre"></span></p>
+                            <p><b>Director:</b> <span id="movieDirector"></span></p>
+                            <p><b>Actors:</b> <span id="movieActor"></span></p>
+                            <p><b>Plot:</b> <span id="moviePlot"></span </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
-            <div class="card border-0 font-poppins col bg-transparent">
-                <div class="rounded-top-3" style="height: 350px;">
-                    <img src="https://cdn.pixabay.com/photo/2020/09/11/00/06/spiderman-5561671_1280.jpg"
-                    class="rounded-top-3 w-100 h-100 object-fit-cover" alt="...">
-                </div>
-                <div class="card-body d-flex flex-column rounded-bottom-3 bg-dark-subtle">
-                    <p class="fw-medium mb-2">SpiderMan - No way home </p>
-                    <p class="card-text" style="font-size: 14px;">2022 | Action, Adventure</p>
-                    <a href="#" class="btn btn-dark rounded-3 w-100 btn-sm mt-auto">More Info</a>
-                </div>
-            </div>
-            <div class="card border-0 font-poppins col bg-transparent">
-                <div class="rounded-top-3" style="height: 350px;">
-                    <img src="https://cdn.pixabay.com/photo/2020/09/11/00/06/spiderman-5561671_1280.jpg"
-                    class="rounded-top-3 w-100 h-100 object-fit-cover" alt="...">
-                </div>
-                <div class="card-body d-flex flex-column rounded-bottom-3 bg-dark-subtle">
-                    <p class="fw-medium mb-2">SpiderMan - No way home</p>
-                    <p class="card-text" style="font-size: 14px;">2022 | Action, Adventure</p>
-                    <a href="#" class="btn btn-dark rounded-3 w-100 btn-sm mt-auto">More Info</a>
-                </div>
-            </div>
-            <div class="card border-0 font-poppins col bg-transparent">
-                <div class="rounded-top-3" style="height: 350px;">
-                    <img src="https://cdn.pixabay.com/photo/2020/09/11/00/06/spiderman-5561671_1280.jpg"
-                    class="rounded-top-3 w-100 h-100 object-fit-cover" alt="...">
-                </div>
-                <div class="card-body d-flex flex-column rounded-bottom-3 bg-dark-subtle">
-                    <p class="fw-medium mb-2">SpiderMan - No way home</p>
-                    <p class="card-text" style="font-size: 14px;">2022 | Action, Adventure</p>
-                    <a href="#" class="btn btn-dark rounded-3 w-100 btn-sm mt-auto">More Info</a>
-                </div>
-            </div>
-         
         </div>
     </main>
 </body>
